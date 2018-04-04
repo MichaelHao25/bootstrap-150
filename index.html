@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>Bootstrap 101 Template</title>
+	<script src="js/sc320.js"></script>
+	<link href="css/bootstrap-grid-system.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/common.css">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+	<div class="hcl-header">
+		<div class="w">
+			<a class="brand pull-left">
+				
+			</a>
+			<div class="toggle-menu pull-right">
+				<span></span>
+			</div>
+			<div class="nav pull-right">
+				<a href="#" class="pull-left">HOME</a>
+				<a href="#" class="pull-left">FEATURES</a>
+				<a href="#" class="pull-left">ECOLOGY</a>
+				<a href="#" class="pull-left">ROADMAP</a>
+				<a href="#" class="pull-left">TEAM</a>
+				<a href="#" class="pull-left">WHITE PAPER</a>
+				<a href="#" class="pull-left">SOCIAL</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<script src="js/jquery-1.12.4.min.js"></script>
+	<script>
+		$('.toggle-menu').on('click', function() {
+			$(this).toggleClass('active');
+			$('.nav').slideToggle()
+		});
+	</script>
+</body>
+</html>

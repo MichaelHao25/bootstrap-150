@@ -1,0 +1,99 @@
+.hcl-header
+	position relative
+	padding 25px 0
+	background #000
+	@media(max-width 768px)
+		padding 0 15px
+		height 50px
+	.w
+		max-width 870px
+		width 100%
+		margin 0 auto
+		.brand
+			width 55px
+			height 55px
+			background url(../img/brand.png) left center no-repeat
+			@media(max-width 768px)
+				height 50px
+				background-size auto 70%
+		.nav
+			padding-top 12px
+			font-size 14px
+			color #fff
+			line-height 38px
+			@media(max-width 768px)
+				position absolute
+				top 50px
+				left 0
+				right 0
+				padding-top 0
+				background #ccc
+				display none
+			a
+				margin 0 13px
+				color #fff
+				text-decoration none
+				@media(max-width 768px)
+					width 100%
+					margin 0
+					padding 0 20px
+					box-sizing border-box
+					border-bottom 1px solid #fff
+					transition 0.3s
+					&:hover
+						text-indent 2em
+		.toggle-menu
+			height 50px
+			width 50px
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			align-items center
+			justify-content flex-end
+			display none
+			@media(max-width 768px)
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				
+			&.active
+				span
+					background rgba(0,0,0,0)
+					&:after
+						top 0
+						transform rotateZ(-45deg)
+						transition 0.3s top, 0.3s bottom,transform 0.3s 0.3s
+					&:before
+						bottom 0
+						transform rotateZ(45deg)
+						transition 0.3s top, 0.3s bottom,transform 0.3s 0.3s
+			span
+				position relative
+				width 30px
+				height 2px
+				background #fff
+				transition 0.3s
+				&:after
+					position absolute
+					content ""
+					top -12px
+					left 0
+					right 0
+					height 2px
+					background #fff
+					transition 0.3s  0.3s top, 0.3s  0.3s bottom,transform 0.3s
+				&:before
+					position absolute
+					content ""
+					bottom -12px
+					left 0
+					right 0
+					height 2px
+					background #fff
+					transition 0.3s  0.3s top, 0.3s  0.3s bottom,transform 0.3s
+	.clear
+		clear both
