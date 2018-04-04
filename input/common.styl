@@ -1,99 +1,405 @@
+@import url(reset.css);
 .hcl-header
 	position relative
-	padding 25px 0
-	background #000
-	@media(max-width 768px)
-		padding 0 15px
-		height 50px
-	.w
-		max-width 870px
-		width 100%
-		margin 0 auto
-		.brand
-			width 55px
-			height 55px
-			background url(../img/brand.png) left center no-repeat
-			@media(max-width 768px)
-				height 50px
-				background-size auto 70%
-		.nav
-			padding-top 12px
-			font-size 14px
-			color #fff
-			line-height 38px
-			@media(max-width 768px)
-				position absolute
-				top 50px
-				left 0
-				right 0
-				padding-top 0
-				background #ccc
-				display none
-			a
-				margin 0 13px
-				color #fff
-				text-decoration none
-				@media(max-width 768px)
-					width 100%
-					margin 0
-					padding 0 20px
-					box-sizing border-box
-					border-bottom 1px solid #fff
-					transition 0.3s
-					&:hover
-						text-indent 2em
-		.toggle-menu
+	border-bottom 1px solid #464d5c
+	.brand
+		width 185px
+		height 95px
+		background url(../img/brand.png) left center no-repeat
+		@media(max-width 992px)
+			float none!important
+			display block
+			margin 0 auto
+			height 80px
+		@media(max-width 768px)
 			height 50px
-			width 50px
+			background-size auto 60%
+			margin 0
+	.nav
+		padding-top 32px
+		@media(min-width 768px)
+			display block!important
+		@media(max-width 992px) and (min-width 768px)
+			padding-top 10px
+			float none!important
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex!important
+			justify-content center
+		@media(max-width 768px)
+			// position absolute
+			// top 50px
+			// left 0
+			// right 0
+			// padding-top 0
+			// background #ccc
+			display none
+			padding-top 0
+			margin-left -15px
+			margin-right -15px
+			.root-menu
+				display block
+				width 100%
+		.item
+			display block
+			font-size 16px
+			color #464d5c
+			padding 0 20px
+			height 40px
+			line-height 40px
+			text-decoration none
+			border-radius 3px
+			cursor pointer
+			transition 0.5s
+			&.search
+				background url('../img/MAGNIFYINGGLASS拷贝.png') center center no-repeat
+				@media(max-width 768px)
+					display none
+				&+.child-menu
+					right 0
+					left auto
+					@media(max-width 768px)
+						display block!important
+						height 40px!important
+					.item
+						background #f39801
+					input
+						font-size 14px
+						color #fff
+						line-height 40px
+						height 40px
+						border none
+						background none
+						outline none
+						padding 0
+						&[type=submit]
+							margin 10px 0
+							line-height 20px
+							height 20px
+							border-left 1px solid #fff
+							padding-left 10px
+			&:hover,
+			&.active
+				background-color #005bac
+				color #fff
+			@media(max-width 992px)
+				padding 0 15px
+			@media(max-width 768px)
+				width 100%
+				margin 0
+				padding 0 20px
+				box-sizing border-box
+		.root-menu
+			position relative
+			.child-menu
+				position absolute
+				left 0
+				top 40px
+				display none
+				@media(max-width 768px)
+					position static
+				.item
+					margin-top 3px
+					white-space nowrap
+					background #005bac
+					color #fff
+					&:hover
+						background #f39801
+	.toggle-menu
+		height 50px
+		width 50px
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		align-items center
+		justify-content flex-end
+		display none
+		@media(max-width 768px)
 			display -webkit-flex
 			display -moz-flex
 			display -ms-flex
 			display -o-flex
 			display flex
-			align-items center
-			justify-content flex-end
-			display none
-			@media(max-width 768px)
-				display -webkit-flex
-				display -moz-flex
-				display -ms-flex
-				display -o-flex
-				display flex
-				
-			&.active
-				span
-					background rgba(0,0,0,0)
-					&:after
-						top 0
-						transform rotateZ(-45deg)
-						transition 0.3s top, 0.3s bottom,transform 0.3s 0.3s
-					&:before
-						bottom 0
-						transform rotateZ(45deg)
-						transition 0.3s top, 0.3s bottom,transform 0.3s 0.3s
+			position absolute
+			right 15px
+			top 0
+		&.active
 			span
-				position relative
-				width 30px
-				height 2px
-				background #fff
-				transition 0.3s
+				background rgba(0,0,0,0)
 				&:after
-					position absolute
-					content ""
-					top -12px
-					left 0
-					right 0
-					height 2px
-					background #fff
-					transition 0.3s  0.3s top, 0.3s  0.3s bottom,transform 0.3s
+					top 0
+					transform rotateZ(-45deg)
+					transition 0.3s top, 0.3s bottom,transform 0.3s 0.3s
 				&:before
-					position absolute
-					content ""
-					bottom -12px
-					left 0
-					right 0
-					height 2px
-					background #fff
-					transition 0.3s  0.3s top, 0.3s  0.3s bottom,transform 0.3s
+					bottom 0
+					transform rotateZ(45deg)
+					transition 0.3s top, 0.3s bottom,transform 0.3s 0.3s
+		span
+			position relative
+			width 30px
+			height 2px
+			background #005bac
+			transition 0.3s
+			&:after
+				position absolute
+				content ""
+				top -12px
+				left 0
+				right 0
+				height 2px
+				background #005bac
+				transition 0.3s  0.3s top, 0.3s  0.3s bottom,transform 0.3s
+			&:before
+				position absolute
+				content ""
+				bottom -12px
+				left 0
+				right 0
+				height 2px
+				background #005bac
+				transition 0.3s  0.3s top, 0.3s  0.3s bottom,transform 0.3s
 	.clear
 		clear both
+.banner
+	box-sizing border-box
+	height 400px
+	background url('../img/矩形10.png') center top no-repeat
+	h3
+		padding-top 284px
+		font-size 56px
+		color #fff
+		line-height 1
+		font-weight normal
+		@media(max-width 768px)
+			font-size 40px
+	.pull-right
+		padding-top 324px
+		font-size 16px
+		color #fff
+		line-height 1
+		@media(max-width 768px)
+			padding-top 308px
+.link-group
+	padding-top 15px
+	background #eee
+	border-bottom 1px solid #f39800
+	.nav
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		@media(max-width 768px)
+			overflow scroll
+			width 100%
+			&::-webkit-scrollbar
+				display none
+		a
+			position relative
+			flex 1
+			font-size 18px
+			color #fff
+			line-height 50px
+			text-align center
+			background #f39800
+			border-radius 10px 10px 0 0
+			box-sizing border-box
+			border 1px solid #f39800
+			border-bottom none
+			transition 0.3s
+			@media(max-width 768px)
+				flex 0 0 30%
+			&+a
+				margin-left 1px
+			&:after
+				content ""
+				position absolute
+				bottom -1px
+				left 0
+				right 0
+				border-top 1px solid #f39800
+				transition 0.3s
+			&:hover
+			&.active
+				color #f39800
+				background #fff
+				&:after
+					border-color #fff
+				
+.list
+	.row
+		padding 40px 0
+		border-bottom 2px solid #d2d2d2
+		&:hover
+			h3
+				color #f5ad13
+			a.more
+				color #fff
+				border-color #0b62c0
+				background #0b62c0
+	.pic
+		img
+			width 100%
+	h3
+		padding 25px 0
+		font-weight normal
+		line-height 1
+		font-size 24px
+		color #202020
+		transition 0.3s
+	p
+		font-size 14px
+		color #202020
+		line-height 1.5
+		opacity 0.6
+	a.more
+		display block
+		width 130px
+		height 40px
+		font-size 18px
+		color #333
+		text-align center
+		line-height 40px
+		border-radius 20px
+		border 2px solid #333333
+		margin-top 40px
+		transition 0.3s
+.page-control
+	padding 80px 0
+	text-align center
+	font-size 0
+	a
+		display inline-block
+		padding 0 15px
+		margin 0 5px
+		border 1px solid #005bac
+		font-size 14px
+		color #005bac
+		line-height 32px
+		transition 0.3s
+		&.none
+			border-color transparent
+			color #000
+		&.hover
+			&.active
+			&:hover
+				border-color #f39800
+				background #f39800
+				color #fff
+			
+			
+
+
+.footer
+	padding-bottom 60px
+	background #464c5c
+	@media(max-width 768px)
+		padding-bottom 20px
+	h3
+		padding 30px 0 10px
+		font-size 20px
+		color #fff
+		line-height 1
+	.nav
+		padding-bottom 10px
+		font-size 16px
+		color #7c7e83
+		line-height 24px
+		a
+			display block
+			&:hover
+				color #fff
+		div
+			a
+				display inline-block
+			a+a
+				margin-left 20px
+	.qrcode
+		padding 30px 0 0 0
+		text-align center
+		line-height 1.5
+		font-size 16px
+		color #7c7e83
+		@media(max-width 768px)
+			float none!important
+		img
+			display block
+			margin 0 auto
+	.bdb
+		padding-bottom 15px
+		margin-bottom 15px
+		border-bottom 1px solid #fff
+	.copy-right
+		.pic
+			@media(max-width 768px)
+				padding-top 20px
+				width 100%
+				text-align center
+			img
+				vertical-align middle
+		.nav
+			a
+				display inline-block
+				color #fff
+				&+a
+					margin-left 10px
+
+
+.pof-nav
+	position fixed
+	right 0
+	bottom 0
+	&:after
+		content ""
+		position absolute
+		top -10px
+		left 50%
+		border 5px solid transparent
+		border-bottom-color #fff
+		margin-left -5px
+	.item
+		display block
+		width 45px
+		height 45px
+		font-size 16px
+		color #fff
+		background #c1d0cb
+		text-align center
+		line-height 45px
+		background #c1d0cb url() center center no-repeat
+	.qq
+		.item
+			background-image url(../img/code_80.jpg)
+			background-color #005bac
+	.tel
+		position relative
+		transition 0.3s
+		cursor pointer
+		&:hover
+			transform translateX(-100px)
+			.item
+				background-color #f4a524
+		.item
+			background-image url(../img/code_84.jpg)
+			transition 0.3s
+			background-color #005bac
+		.number
+			position absolute
+			left 45px
+			top 0
+			bottom 0
+			white-space nowrap
+			width 100px
+			text-align center
+			font-size 14px
+			color #fff
+			line-height 45px
+			background #f4a524
+	.qr
+		.item
+			background-image url(../img/code_88.jpg)
+			background-color #005bac
