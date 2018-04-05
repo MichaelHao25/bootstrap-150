@@ -251,12 +251,26 @@
 		<div class="tel"><a href="#" class="item"></a><div class="number">400-666-888</div></div>
 		<div class="qr"><a href="#" class="item"></a></div>
 	</div>
+	<div class="layout-toogle">
+		
+	</div>
 	<script src="js/jquery-1.12.4.min.js"></script>
 	<script>
 		$('.toggle-menu').on('click', function() {
-			$(this).toggleClass('active');
-			$('.nav').slideToggle()
+			if ($(this).toggleClass('active').hasClass('active')) {
+
+				$('.layout-toogle').addClass('active')
+				$('.hcl-header .nav').addClass('active')
+			}else{
+				$('.hcl-header .nav').removeClass('active')
+				$('.layout-toogle').removeClass('active')
+			}
 		});
+		$('.layout-toogle').on('click', function() {
+			$('.toggle-menu').trigger('click');
+		}).on('touchmove', function(event) {
+			event.preventDefault();
+		})
 		$('.hcl-header .nav .root-menu').on('mouseleave', function() {
 			$(this).children('.child-menu').slideUp();
 			$(this).children('.item').removeClass('active')
